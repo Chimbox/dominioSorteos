@@ -1,17 +1,36 @@
 const mongoose = require('mongoose');
+const schema = mongoose.Schema;
 
-const Sorteo = {
-    rangoDeNumeros: Map,
+const SorteoSchema = new mongoose.Schema({
+    numMin: Number,
+    numMax: Number,
     precioDeNumeros: Number,
-    fechaInicioDeVenta: Date,
-    fechaFinDeVenta: Date,
-    fechaDeCreacion: { type: Date, default: Date.now },
-    fechaDeSorteo: Date,
+    fechaInicioVenta: Date,
+    fechaFinVenta: Date,
+    fechaCreacion: { type: Date, default: Date.now },
+    fechaSorteo: Date,
     diasLimiteApartado: Number,
     imagen: String,
-    nombre: String,
+    titulo: String,
     descripcion: String,
-    estado: String 
-};
+    tiempoRecordatorio: Number,
+    boletoGanador: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Boleto'
+    },
+    boletos: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Boleto'
+        }
+    ],
+    estadoSorteo: {
+        type: String,
+        enum : ['VIGENTE','TERMINADO', 'TERMINADO'],
+        default: 'VIGENTE'
+    }
+});
 
-module.exports = Sorteo;
+const sorteo = mongoose.model('Sorteo', SorteoSchema);
+
+module.exports = sorteo;

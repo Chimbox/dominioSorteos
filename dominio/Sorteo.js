@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const schema = mongoose.Schema;
 
-const SorteoSchema = new mongoose.Schema({
+const Sorteo = {
     numMin: Number,
     numMax: Number,
     precioDeNumeros: Number,
@@ -29,8 +28,6 @@ const SorteoSchema = new mongoose.Schema({
         enum : ['VIGENTE','TERMINADO', 'TERMINADO'],
         default: 'VIGENTE'
     }
-});
+}
 
-const sorteo = mongoose.model('Sorteo', SorteoSchema);
-
-module.exports = sorteo;
+module.exports = Sorteo;

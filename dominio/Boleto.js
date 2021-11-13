@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 
-const schema = mongoose.Schema;
-
-const BoletoSchema = new mongoose.Schema({
+const Boleto = {
     numero: Number,
     comprobantePago: String,
     estadoBoleto: {
@@ -35,9 +33,8 @@ const BoletoSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'sorteo'
     }
-});
+}
 
-const boleto = mongoose.model('Boleto', BoletoSchema);
+module.exports = Boleto;
 
-module.exports = boleto;
 

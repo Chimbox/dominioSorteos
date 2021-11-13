@@ -1,8 +1,8 @@
 {
-  "name": "dominioSorteos",
+  "name": "dominio-sorteos-equipo3",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Modelos de dominio",
+  "main": "Cliente.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/Chimbox/dominioSorteos.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Daniel Alejandro Ornelas Mendoza",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Chimbox/dominioSorteos/issues"
